@@ -1,38 +1,71 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+#
+# Are you tempted to edit this file?
+#
+# First consider if the changes make sense for all,
+# or if they are specific to your workflow/system.
+# If it is the latter, you can augment this list with
+# entries in .git/info/excludes
+#
+# see also test/files/.gitignore
+#
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
+#
+# JARs aren't checked in, they are fetched by sbt
+#
+.java-version
+/lib/*.jar
+/test/files/codelib/*.jar
+/test/files/lib/*.jar
+/test/files/speclib/instrumented.jar
+/tools/*.jar
+metastore_db
+# Developer specific properties
+/build.properties
+/buildcharacter.properties
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# might get generated when testing Jenkins scripts locally
+/jenkins.properties
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# target directory for build
+/build/
 
-### VS Code ###
-.vscode/
+# other
+/out/
+/bin/
+/sandbox/
 
-### Mac OS ###
-.DS_Store
+# intellij
+/src/intellij*/*.iml
+/src/intellij*/*.ipr
+/src/intellij*/*.iws
+**/.cache
+/.idea
+/.settings
+
+# vscode
+/.vscode
+
+# Standard symbolic link to build/quick/bin
+/qbin
+
+# sbt's target directories
+/target/
+/project/**/target/
+/test/macro-annot/target/
+/test/files/target/
+/test/target/
+/build-sbt/
+local.sbt
+jitwatch.out
+spark-warehouse
+# Used by the restarr/restarrFull commands as target directories
+/build-restarr/
+/target-restarr/
+
+# metals
+.metals
+.bloop
+project/**/metals.sbt
+
+.bsp
+/project/target/

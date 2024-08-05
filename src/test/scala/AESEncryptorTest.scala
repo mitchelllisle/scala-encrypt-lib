@@ -59,7 +59,7 @@ class AESEncryptorTest extends AnyFlatSpec with SparkFunSuite {
 
     1 to 1000 foreach { _ =>
       val encrypted = crypt.encrypt("Hello")
-      encryptedVals = encryptedVals.appended(encrypted)
+      encryptedVals = encryptedVals :+ encrypted
     }
 
     assert(encryptedVals.toSet.size == encryptedVals.length)
